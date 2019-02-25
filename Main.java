@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 
 public class Main {
 	
@@ -21,7 +22,11 @@ public class Main {
 		aus.add_Constraint(city_Variables[3], city_Variables[4]);
 
 
-
+		Solver aus_Solver = new Solver("aus");
+		LinkedList<City> result = aus_Solver.aus_Solver(aus);
+		for (City c : result) {
+			System.out.println(c.name + ": " +c.assignment);
+		}
 
 	}
 }
